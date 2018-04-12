@@ -1,1 +1,3 @@
-geth --identity "miner1" --networkid 42 --datadir "miner1" --nodiscover --mine --rpc --rpcport "8042" --port "30303" --unlock 0 --password miner1/password.sec --ipcpath "Library/Ethereum/geth.ipc"
+geth --identity "miner2" --rpc --rpccorsdomain "*" --datadir "miner2" --rpcapi "db,eth,net,web3" --networkid 2010 init ./genesis.json
+
+geth --identity "miner2" --rpc --rpccorsdomain "*" --datadir "miner2" --rpcapi "db,eth,net,web3,personal" --networkid 2010 console

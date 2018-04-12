@@ -1,2 +1,13 @@
 
 node_modules
+*.log
+
+*.ldb
+
+ChainSkills/miner2/geth/chaindata/
+
+ChainSkills/miner2/geth/lightchaindata/
+
+ChainSkills/miner2/geth/
+
+ChainSkills/miner2/
