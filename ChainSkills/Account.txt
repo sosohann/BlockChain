@@ -1,0 +1,8 @@
+-----------miner1 account--------
+
+miner1 : d7e5be6007ce2491a6a224e49c7ed341ee51f3c4
+miner2 : 19c420fd81c8736fe56d162c3bf8d0ea6da977aa
+
+
+
+-----------miner2 account--------
