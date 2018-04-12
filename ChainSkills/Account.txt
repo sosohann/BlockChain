@@ -3,6 +3,7 @@
 miner1 : d7e5be6007ce2491a6a224e49c7ed341ee51f3c4
 miner2 : 19c420fd81c8736fe56d162c3bf8d0ea6da977aa
 
-
-
 -----------miner2 account--------
+
+miner1 : b420acf8a50c9b18a42b088ba06d39776fd76391
+miner2 : 22f0222adb2d725057d47a7044b45c4ed9923874
