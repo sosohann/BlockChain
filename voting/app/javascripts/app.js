@@ -1,3 +1,4 @@
+/// <reference types="jquery" />
 // Import the page's CSS. Webpack will know what to do with it.
 import "../stylesheets/app.css";
 
@@ -21,23 +22,44 @@ var Voting = contract(voting_artifacts);
 
 let candidates = {"Rama": "candidate-1", "Nick": "candidate-2", "Jose": "candidate-3"}
 
-window.voteForCandidate = function(candidate) {
-  let candidateName = $("#candidate").val();
+let voteNumber=0;
+let candidateNumber=0;
+
+window.getVoteCandidateList = function(){
+  roomNumber = $("#vote_number").val();
+  try{
+    Voting.deployed().then(function(contractInstance){
+      contractInstance.getVoteCandidateList(roomNumber,{gas:470000,from:web3.eth.accounts[0]}).then(function(list){
+        $("#candidate_list").empty();
+        candidateNumber = list.length;
+        list.forEach(element,idx => {
+          var $item = $('<tr><td id="candidate_name-"'+index+'>'+element+'</td>\
+                            <td id="candidate-"'+index+'></td>\
+                            <td><button onclick="voteForCandidate('+index+')">Vote</button></td>\
+                          </tr>');
+          $("#candidata_list").append($item);
+        });
+      });
+    });
+  }catch (err) {
+    console.log(err);
+  }
+}
+
+window.voteForCandidate = function(index) {
+  let candidateName = $("#candidate_name-"+index).val();
   try {
     $("#msg").html("Vote has been submitted. The vote count will increment as soon as the vote is recorded on the blockchain. Please wait.")
-    $("#candidate").val("");
 
-    /* Voting.deployed() returns an instance of the contract. Every call
-     * in Truffle returns a promise which is why we have used then()
-     * everywhere we have a transaction call
-     */
     Voting.deployed().then(function(contractInstance) {
-      contractInstance.voteForCandidate(candidateName, {gas: 140000, from: web3.eth.accounts[0]}).then(function() {
-        let div_id = candidates[candidateName];
-        return contractInstance.totalVotesFor.call(candidateName).then(function(v) {
-          $("#" + div_id).html(v.toString());
-          $("#msg").html("");
-        });
+      contractInstance.voteForCandidate(roomNumber,candidateName, {gas: 140000, from: web3.eth.accounts[0]}).then(function() {
+        for(var i=0;i<candidateNumber;i++){
+          let index = i;
+          let name = $("#candidate_name-"+index).val();
+          contractInstance.totalVotesFor.call(name).then(function(count){
+            $("#candidate-"+index).val(count);
+          });
+        }
       });
     });
   } catch (err) {
@@ -57,13 +79,4 @@ $( document ).ready(function() {
   }
 
   Voting.setProvider(web3.currentProvider);
-  let candidateNames = Object.keys(candidates);
-  for (var i = 0; i < candidateNames.length; i++) {
-    let name = candidateNames[i];
-    Voting.deployed().then(function(contractInstance) {
-      contractInstance.totalVotesFor.call(name).then(function(v) {
-        $("#" + candidates[name]).html(v.toString());
-      });
-    })
-  }
 });

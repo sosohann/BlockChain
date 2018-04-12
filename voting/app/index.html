@@ -8,6 +8,8 @@
 <body class="container">
   <h1>A Simple Hello World Voting Application</h1>
   <div id="address"></div>
+  <input type='number' placeholder="Vote Index" id='vote_number'></input>
+  <button onclick="getVoteCandidateList()">Get</button>
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
@@ -16,25 +18,9 @@
           <th>Votes</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Rama</td>
-          <td id="candidate-1"></td>
-        </tr>
-        <tr>
-          <td>Nick</td>
-          <td id="candidate-2"></td>
-        </tr>
-        <tr>
-          <td>Jose</td>
-          <td id="candidate-3"></td>
-        </tr>
-      </tbody>
-    </table>
+      <tbody id=candidata_list></tbody>
     <div id="msg"></div>
   </div>
-  <input type="text" id="candidate" />
-  <a href="#" onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>

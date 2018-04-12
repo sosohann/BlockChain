@@ -2,23 +2,30 @@ pragma solidity ^0.4.18;
 // We have to specify what version of compiler this code will compile with
 
 contract Voting {
-    
-    mapping (bytes32 => uint8) public votesReceived;
+    // TODO : getVoteCandidateList
+    struct human{
+        bytes32 name; 
+        uint8 count;
+    }
+
+    mapping (bytes32 => human) public votesReceived;
     
     bytes32[] public candidateList;
-    
-    function Voting(bytes32[] candidateNames) public {
-        candidateList = candidateNames;
+
+    function getVoteCandidateList(uint8 roomNumber) view public returns (human){
+        
     }
 
   // This function returns the total votes a candidate has received so far
-    function totalVotesFor(bytes32 candidate) view public returns (uint8) {
+    function totalVotesFor(bytes32 votenumber, bytes32 candidate) view public returns (uint8) {
         require(validCandidate(candidate));
-        return votesReceived[candidate];
+        return votesReceived[candidate].name;
     }
 
   // This function increments the vote count for the specified candidate. This
   // is equivalent to casting a vote
+
+  //TODO : Edit argc
     function voteForCandidate(bytes32 candidate) public {
         require(validCandidate(candidate));
         votesReceived[candidate] += 1;
