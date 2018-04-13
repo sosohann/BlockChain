@@ -16,7 +16,7 @@ contract Voting {
     struct Human {
         bytes32 cName;
         uint8 count;
-    }   
+    }
 
     mapping( uint8 => poll ) public polls;
     bytes32[] public temp;
