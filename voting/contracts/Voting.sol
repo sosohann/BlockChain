@@ -23,6 +23,7 @@ contract Voting {
     mapping( bytes32 => Human ) public humans;
 
     function createPoll( uint8 _roomNumber, bytes32 _pName ) public {
+        // possible?
         polls[_roomNumber] = Poll( true, _pName, , , );
     }
 
@@ -68,7 +69,7 @@ contract Voting {
     function validCandidate( uint8 _roomNumber, bytes32 _candidate ) view public returns ( bool ) {
         uint leng = polls[_roomNumber].candidateList.length;
         for( uint i = 0; i < leng; i++ ) {
-            if ( candidateList[i] == _candidate ) {
+            if ( polls[_roomNumber].candidateList[i] == _candidate ) {
                 return true;
             }
         }
