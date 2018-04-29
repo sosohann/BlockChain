@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="css/reset.css">
   <!-- CSS reset -->
   <link rel="stylesheet" href="css/style.css">
@@ -36,10 +36,9 @@
           <a href="#0">
             <img src="img/userIcon.png" alt="avatar"> Account
           </a>
-
           <ul>
             <li>
-              <a href="#0">My Account</a>
+              <a href="#0" onclick="document.getElementById('id01').style.display='block'">My Account</a>
             </li>
             <li>
               <a href="#0">Edit Account</a>
@@ -122,15 +121,55 @@
     </nav>
 
     <div class="content-wrapper">
+
+      <div class="create-vote-page">
+        <text class="header">투표 개설</text>
+        <div class="input-table">
+          <div>
+            <text>투표 이름 </text>
+            <input class='text-input'>
+          </div>
+          <text class="table-header">Candidate</text>
+          <button class="add-button button-color-white" onclick="addInputBox()">+ Add</button>
+          <div id="input-items" class="input-items">
+            <div>
+              <text class="numbering">1</text>
+              <input class='text-input'>
+            </div>
+            <div>
+              <text class="numbering">2</text>
+              <input class='text-input'>
+            </div>
+          </div>
+          <div class="option-items">
+            <div class="option-item">
+              <text>성별</text>
+              <text>남</text>
+              <input type="checkbox">
+              <text>여</text>
+              <input type="checkbox">
+            </div>
+            <div class="option-item">
+              <text>연령</text>
+              <input class="number-input" type="number">
+              <input class="number-input" type="number">
+            </div>
+          </div>
+          <div align="center">
+            <button class='create-button button-color-white'>투표 시작</button>
+          </div>
+        </div>
+      </div>
+
       <div class='vote'>
-        <text class="vote-name">투표 이름</text>
+        <text class="vote-name">진행중인 투표 이름</text>
         <table class="vote-list">
           <tr class="candidate">
             <td>
               <text class="name">ABCDEFG5</text>
               <button class="vote-button">Vote</button>
               </br>
-              <a class="vote-bar vote-color-green a" name="poll_bar">&nbsp</a>
+              <a class="vote-bar button-color-green a" name="poll_bar">&nbsp</a>
               </br>
               <text class="percent" name="poll_percent">75%</text>
               <text class="val" name="poll_val">75표</text>
@@ -140,7 +179,7 @@
               <text class="name">ABCDEFG5</text>
               <button class="vote-button">Vote</button>
               </br>
-              <a class="vote-bar vote-color-red b" name="poll_bar">&nbsp</a>
+              <a class="vote-bar button-color-red b" name="poll_bar">&nbsp</a>
               </br>
               <text class="percent" name="poll_percent">15%</text>
               <text class="val" name="poll_val">15표</text>
@@ -150,12 +189,110 @@
               <text class="name">ABCDEFG5</text>
               <button class="vote-button">Vote</button>
               </br>
-              <a class="vote-bar vote-color-blue c" name="poll_bar">&nbsp</a>
+              <a class="vote-bar button-color-blue c" name="poll_bar">&nbsp</a>
               </br>
               <text class="percent" name="poll_percent">10%</text>
               <text class="val" name="poll_val">10표</text>
           </tr>
         </table>
+      </div>
+      <div class='vote'>
+        <text class="vote-name">투표한 투표 이름</text>
+        <table class="vote-list">
+          <tr class="candidate">
+            <td>
+              <text class="name">ABCDEFG5</text>
+              </br>
+              <a class="vote-bar button-color-green a" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">75%</text>
+              <text class="val" name="poll_val">75표</text>
+          </tr>
+          <tr class="candidate">
+            <td>
+              <text class="name">ABCDEFG5</text>
+              </br>
+              <a class="vote-bar button-color-red b" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">15%</text>
+              <text class="val" name="poll_val">15표</text>
+          </tr>
+          <tr class="candidate">
+            <td>
+              <text class="name">ABCDEFG5</text>
+              </br>
+              <a class="vote-bar button-color-blue c" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">10%</text>
+              <text class="val" name="poll_val">10표</text>
+          </tr>
+        </table>
+      </div>
+      <div class='vote'>
+        <text class="vote-name">끝난 투표 이름</text>
+        <text class="winner">A</text>
+        <table class="vote-list">
+          <tr class="candidate">
+            <td>
+              <text class="name">A</text>
+              </br>
+              <a class="vote-bar button-color-green a" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">75%</text>
+              <text class="val" name="poll_val">75표</text>
+          </tr>
+          <tr class="candidate">
+            <td>
+              <text class="name">B</text>
+              </br>
+              <a class="vote-bar button-color-red b" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">15%</text>
+              <text class="val" name="poll_val">15표</text>
+          </tr>
+          <tr class="candidate">
+            <td>
+              <text class="name">C</text>
+              </br>
+              <a class="vote-bar button-color-blue c" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">10%</text>
+              <text class="val" name="poll_val">10표</text>
+          </tr>
+        </table>
+      </div>
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+          <div class="w3-center">
+            <br>
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright"
+              title="Close Modal">&times;</span>
+            <img src="./img/userIcon.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+          </div>
+
+          <form class="w3-container" action="/action_page.php">
+            <div class="w3-section">
+              <label>
+                <b>Username</b>
+              </label>
+              <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+              <label>
+                <b>Password</b>
+              </label>
+              <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+              <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+              <input class="w3-check" type="checkbox" checked="checked"> Remember me
+            </div>
+          </form>
+          <div align='center' id="naverIdLogin" class="naverIdLogin"></div>
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <span class="w3-left w3-padding w3-hide-small">Forgot
+              <a href="#">password?</a>
+            </span>
+            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-right w3-red">Cancel</button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- .content-wrapper -->
@@ -164,6 +301,31 @@
   <script src="js/jquery-2.1.4.js"></script>
   <script src="js/jquery.menu-aim.js"></script>
   <script src="js/main.js"></script>
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var naverLogin = new naver.LoginWithNaverId(
+      {
+        clientId: "nspVwgXDRGU38JIFxWa4",
+        callbackUrl: "http://192.168.1.100:8080/logincallback.html",
+        isPopup: true,
+        loginButton: { color: "green", type: 3, height: 50 }
+      }
+    );
+    naverLogin.init();
+  </script>
+  <script>
+    function addInputBox() {
+      var node = document.createElement("div");
+      var text = document.createElement("text");
+      text.className = "numbering";
+      text.textContent = document.getElementById('input-items').childElementCount;
+      var input = document.createElement("input");
+      input.className = "text-input";
+      node.appendChild(text);
+      node.appendChild(input);
+      document.getElementById('input-items').appendChild(node);
+    }
+  </script>
   <!-- Resource jQuery -->
 </body>
 

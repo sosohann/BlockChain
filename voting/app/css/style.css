@@ -15,7 +15,7 @@ body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
   color: #3e454c;
-  background-color:whitesmoke;
+  background-color:rgb(228, 227, 227);
 }
 body::after {
   clear: both;
@@ -759,15 +759,12 @@ Sidebar
   text-align: center;
   vertical-align: middle;
 
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);  
-
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
 
 }
 
-.candidate .vote-color-green{
+.button-color-green{
   background: #5ca934;
   border-color: #478228 #478228 #3c6f22;
   background-image: -webkit-linear-gradient(top, #69c03b, #5ca934 66%, #54992f);
@@ -776,7 +773,7 @@ Sidebar
   background-image: linear-gradient(to bottom, #69c03b, #5ca934 66%, #54992f);
  }
 
-.candidate .vote-color-red{
+.button-color-red{
   background: #d5452f;
   border-color: #ae3623 #ae3623 #992f1f;
   background-image: -webkit-linear-gradient(top, #da5c48, #d5452f 66%, #c73d28);
@@ -785,7 +782,7 @@ Sidebar
   background-image: linear-gradient(to bottom, #da5c48, #d5452f 66%, #c73d28);
 }
 
-.candidate .vote-color-blue{
+.button-color-blue{
   background: #1097e6;
   border-color: #0d78b6 #0d78b6 #0b689e;
   background-image: -webkit-linear-gradient(top, #25a5f0, #1097e6 66%, #0f8ad3);
@@ -793,8 +790,7 @@ Sidebar
   background-image: -o-linear-gradient(top, #25a5f0, #1097e6 66%, #0f8ad3);
   background-image: linear-gradient(to bottom, #25a5f0, #1097e6 66%, #0f8ad3);
 }
-
-.candidate .vote-color-orenge{
+.button-color-orenge{
   background: #f4902a;
   border-color: #df770c #df770c #c76a0a;
   background-image: -webkit-linear-gradient(top, #f69f47, #f4902a 66%, #f38617);
@@ -803,7 +799,7 @@ Sidebar
   background-image: linear-gradient(to bottom, #f69f47, #f4902a 66%, #f38617);
 }
 
-.candidate .vote-color-pink{
+.button-color-pink{
   background: #47494f;
   border-color: #2f3034 #2f3034 #232427;
   background-image: -webkit-linear-gradient(top, #55585f, #47494f 66%, #3d3f44);
@@ -852,8 +848,6 @@ Sidebar
 
   text-decoration: none;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
   background: #5ca934;
   border-color: #478228 #478228 #3c6f22;
   background-image: -webkit-linear-gradient(top, #69c03b, #5ca934 66%, #54992f);
@@ -863,8 +857,8 @@ Sidebar
 
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
-
 }
+
 .vote-button:hover {
   background: #436a2a;
   border-color: #345723 #203913 #254116;
@@ -884,3 +878,158 @@ Sidebar
   font-weight: 500;
 }
 .candidate .val::after{content: " )"}
+
+.vote .winner::before{ content: "\""}
+.vote .winner{
+  font-size: 20px;
+  font-weight: 900;
+}
+.vote .winner::after{ content: "\""}
+
+.create-vote-page{
+  margin-top:15px; 
+}
+
+.create-vote-page .header{
+  font-weight: 800;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.create-vote-page text{
+  font-size: 15px;
+  padding: 2px;
+  font-weight: 600;
+}
+
+.input-table{
+  margin-top: 20px;
+  padding: 10px;
+  background: rgb(237, 237, 237)
+}
+
+.input-table input[type="^checkbox"]{
+  border-radius: 7px;
+  -webkit-box-shadow: inset 0 2px rgba(184, 152, 152, 0.221), inset 0 0 0 2px rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 2px rgba(255, 255, 255, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.input-table .text-input{
+  width: 70%;
+  margin: 10px;
+}
+
+.input-table .number-input{
+  margin: 10px;
+  width: 45px;
+}
+
+.input-table .table-header{
+  float: left;
+  position: relative;
+
+  margin-top: 10px;
+
+  height: 35px;
+  line-height: 35px;
+  padding: 0 15px;
+  font-size: 20px;
+
+  background: white;
+  border-radius: 7px;
+}
+
+.input-items{
+  padding: 15px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  background: white;
+}
+
+.input-table .add-button{
+  float: right;
+  position: relative;
+  
+  margin-top: 10px;
+
+  vertical-align: middle;
+
+  height: 35px;
+  line-height: 35px;
+  padding: 0 15px;
+  font-size: 14px;
+
+  background-clip: padding-box;
+  border: 0.5px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
+
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+.button-color-white{
+  background: #eaede7;
+  border-color: #eef4ea #d2e1c9 #d1d3d0;
+  background-image: -webkit-linear-gradient(top, #e8ecee, #ebebeb 66%, #e7ebe5);
+  background-image: -moz-linear-gradient(top, #e8ecee, #ebebeb 66%, #e7ebe5);
+  background-image: -o-linear-gradient(top, #e8ecee, #ebebeb 66%, #e7ebe5);
+  background-image: linear-gradient(to bottom, #e8ecee, #ebebeb 66%, #e7ebe5);
+}
+
+
+.input-table .create-button{
+  display: inline-block;
+  
+
+  margin-top: 10px;
+  width: auto;
+
+  vertical-align: middle;
+
+  height: 35px;
+  line-height: 35px;
+  padding: 0 15px;
+  font-size: 14px;
+
+  background-clip: padding-box;
+  border: 0.5px solid rgb(177, 167, 208);
+  border-radius: 6px;
+  cursor: pointer;
+
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
+
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.input-items .numbering::after{content: ". "}
+
+.option-items{
+  padding: 15px;
+  background: white;
+}
+
+.input-table input[type=checkbox]{
+  margin: 10px;
+  
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+}
+
+.naverIdLogin img{
+  height: 40px;
+  width: 200px;
+  margin: 10px;
+}
+
+.w3-modal-content{
+  width: 350px;
+}
