@@ -1,28 +1,170 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="no-js">
+
 <head>
-  <title>Hello World DApp</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- CSS reset -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Resource style -->
+  <script src="js/modernizr.js"></script>
+  <!-- Modernizr -->
+
+  <title>Sosohan-Voting-System</title>
 </head>
-<body class="container">
-  <h1>A Simple Hello World Voting Application</h1>
-  <div id="address"></div>
-  <input type='number' placeholder="Vote Index" id='vote_number'></input>
-  <button onclick="getVoteCandidateList()">Get</button>
-  <div class="table-responsive">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Candidate</th>
-          <th>Votes</th>
-        </tr>
-      </thead>
-      <tbody id=candidata_list></tbody>
-    <div id="msg"></div>
-  </div>
+
+<body>
+  <header class="cd-main-header">
+    <a href="#0" class="cd-logo">
+      <img src="img/cd-logo.svg" alt="Logo">
+    </a>
+
+    <a href="#0" class="cd-nav-trigger">Menu
+      <span></span>
+    </a>
+
+    <nav class="cd-nav">
+      <ul class="cd-top-nav">
+        <li>
+          <a href="#0">Support</a>
+        </li>
+        <li class="has-children account">
+          <a href="#0">
+            <img src="img/userIcon.png" alt="avatar"> Account
+          </a>
+
+          <ul>
+            <li>
+              <a href="#0">My Account</a>
+            </li>
+            <li>
+              <a href="#0">Edit Account</a>
+            </li>
+            <li>
+              <a href="#0">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- .cd-main-header -->
+
+  <main class="cd-main-content">
+    <nav class="cd-side-nav">
+      <ul>
+        <li class="cd-label">Main</li>
+
+        <li>
+          <a href="#0">My Vote</a>
+        </li>
+
+        <li class="has-children overview">
+          <a href="#0">Complete</a>
+
+          <ul>
+            <li>
+              <a href="#0">완료된 투표1</a>
+            </li>
+            <li>
+              <a href="#0">완료된 투표2</a>
+            </li>
+            <li>
+              <a href="#0">완료된 투표3</a>
+            </li>
+          </ul>
+        </li>
+        <li class="has-children notifications">
+          <a href="#0">Not Complete
+            <span class="count">3</span>
+          </a>
+
+          <ul>
+            <li>
+              <a href="#0">진행중인 투표1</a>
+            </li>
+            <li>
+              <a href="#0">진행중인 투표2</a>
+            </li>
+            <li>
+              <a href="#0">진행중인 투표3</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="has-children comments">
+          <a href="#0">End</a>
+
+          <ul>
+            <li>
+              <a href="#0">종료된 투표1</a>
+            </li>
+            <li>
+              <a href="#0">종료된 투표2</a>
+            </li>
+            <li>
+              <a href="#0">종료된 투표3</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li class="cd-label">Action</li>
+        <li class="action-btn">
+          <a href="#0">Start New Vote</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content-wrapper">
+      <div class='vote'>
+        <text class="vote-name">투표 이름</text>
+        <table class="vote-list">
+          <tr class="candidate">
+            <td>
+              <text class="name">ABCDEFG5</text>
+              <button class="vote-button">Vote</button>
+              </br>
+              <a class="vote-bar vote-color-green a" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">75%</text>
+              <text class="val" name="poll_val">75표</text>
+          </tr>
+          <tr class="candidate">
+            <td>
+              <text class="name">ABCDEFG5</text>
+              <button class="vote-button">Vote</button>
+              </br>
+              <a class="vote-bar vote-color-red b" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">15%</text>
+              <text class="val" name="poll_val">15표</text>
+          </tr>
+          <tr class="candidate">
+            <td>
+              <text class="name">ABCDEFG5</text>
+              <button class="vote-button">Vote</button>
+              </br>
+              <a class="vote-bar vote-color-blue c" name="poll_bar">&nbsp</a>
+              </br>
+              <text class="percent" name="poll_percent">10%</text>
+              <text class="val" name="poll_val">10표</text>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- .content-wrapper -->
+  </main>
+  <!-- .cd-main-content -->
+  <script src="js/jquery-2.1.4.js"></script>
+  <script src="js/jquery.menu-aim.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Resource jQuery -->
 </body>
-<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-<script src="app.js"></script>
+
 </html>
